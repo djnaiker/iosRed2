@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "ViewController.procesarJSON(String) -&gt; ():ViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "ViewController.procesarJSON(NSData) -&gt; ():ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "procesado as! NSDictionary">
+            </PersistentString>
+            <PersistentString
+               value = "self.isbn.text">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ViewController.convertStringToDictionary(String) -&gt; [String : AnyObject]?:ViewController.swift">
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

@@ -66,10 +66,10 @@ class ViewController: UIViewController , UITextFieldDelegate{
 
             let titulo : String = contenidoLibro["title"] as! String
             let autores : NSArray = contenidoLibro["authors"] as! NSArray
-            let imagen : NSDictionary = contenidoLibro["cover"] as! NSDictionary
-
-
-
+            let imagen : NSDictionary = (contenidoLibro["cover"] as! NSDictionary)
+            
+            
+            
             self.titulo.text = titulo
 
             var autoresTemp : String  = ""
@@ -78,6 +78,11 @@ class ViewController: UIViewController , UITextFieldDelegate{
             }
 
             self.autores.text = autoresTemp
+            
+            let imagenSize : String = imagen["small"] as! String
+            let url = NSURL(string: imagenSize)
+            let data = NSData(contentsOfURL: url!)
+            portada.image = UIImage(data: data!)
 
 
         }catch _{
@@ -85,20 +90,9 @@ class ViewController: UIViewController , UITextFieldDelegate{
         }
     }
 
-
-    func downloadImage(url: NSURL){
-
-        getDataFromUrl(url) { (data, response, error)  in
-            dispatch_async(dispatch_get_main_queue()) { () -> Void in
-                guard let data = data where error == nil else {
-                    return
-                }
-                portada.image =  UIImage(data: data)
-            }
-        }
     }
     
    
 
-}
+
 
